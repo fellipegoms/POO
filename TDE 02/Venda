@@ -1,0 +1,74 @@
+public class Venda {
+    private Produto produto;
+    private Vendedor vendedor;
+    private double desconto = 0;
+    private int quantidadedeItens;
+
+
+
+
+    static double efetuarDesconto(double valorVenda, double desconto){
+        return valorVenda - desconto;
+    }
+    static double calcularValor(int quantidadedeItens, double efetuarDesconto){
+        return efetuarDesconto*quantidadedeItens;
+    }
+    static double calcularComissao(double calcularValor, double COMISSAO){
+        return calcularValor*COMISSAO;
+    }
+
+    public Produto getProduto() {
+        return produto;
+    }
+
+    public void setProduto(Produto produto) {
+        this.produto = produto;
+    }
+
+    public Vendedor getVendedor() {
+        return vendedor;
+    }
+
+    public void setVendedor(Vendedor vendedor) {
+        this.vendedor = vendedor;
+    }
+
+    public double getDesconto() {
+        return desconto;
+    }
+
+    public void setDesconto(double desconto) {
+        this.desconto = desconto;
+    }
+
+    public int getQuantidadedeItens() {
+        return quantidadedeItens;
+    }
+
+    public void setQuantidadedeItens(int quantidadedeItens) {
+        this.quantidadedeItens = quantidadedeItens;
+    }
+
+    public double getValor() {
+        return valor;
+    }
+
+    public void setValor(double valor) {
+        this.valor = valor;
+    }
+
+    private double valor;
+
+
+
+
+
+    public static void main(String[] args) {
+        Vendedor v = new Vendedor("Pedro",2003,"Avenida Paulista");
+        Produto p = new Produto(03,"xbox",4000,1000,false);
+        Venda venda = new Venda();
+        venda.setVendedor(v);
+        venda.setProduto(p);
+        System.out.println("Comissão: "+calcularComissao(4000,0.15));
+
+    }

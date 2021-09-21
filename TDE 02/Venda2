@@ -1,0 +1,12 @@
+public class Venda2 {
+    public static void main(String[] args) {
+        Vendedor v2 = new Vendedor("Leonardo",2002,"Avenida Batel");
+        Produto p2 = new Produto(02,"mouse",100,80,true);
+        Venda venda2 = new Venda();
+        venda2.setDesconto(10);
+        venda2.setQuantidadedeItens(2);
+        venda2.imprimir();
+
+
+    }
+}

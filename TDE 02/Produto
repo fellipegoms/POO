@@ -54,4 +54,16 @@ public class Produto {
     }
 
     private boolean promocao;
+
+    public void imprimirProduto() {
+        System.out.println("Código do produto: " + codigo);
+        System.out.println("Descrição: " + descricao);
+        System.out.println("Valor de venda: " + valorVenda);
+        if (promocao == true) {
+            System.out.println("Produto está em promoção");
+
+        }if (promocao==false){
+            System.out.println("Produto não está em promoção");
+        }
+    }
 }

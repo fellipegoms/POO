@@ -1,10 +1,9 @@
 public class Venda {
     private Produto produto;
     private Vendedor vendedor;
-    private double desconto = 0;
+    private double desconto ;
     private int quantidadedeItens;
-
-
+    private double valorVenda;
 
 
     static double efetuarDesconto(double valorVenda, double desconto){
@@ -59,6 +58,15 @@ public class Venda {
 
     private double valor;
 
+    public void imprimir(){
+        vendedor.imprimirVendedor();
+        System.out.println("Comissão: "+calcularComissao(4000,0.15));
+        System.out.println("Quantidade de itens: "+quantidadedeItens);
+        produto.imprimirProduto();
+        System.out.println("Desconto: "+desconto);
+        System.out.println("Valor total: "+calcularValor(quantidadedeItens,efetuarDesconto(valorVenda, desconto)));
+    }
+
 
 
 
@@ -67,8 +75,9 @@ public class Venda {
         Vendedor v = new Vendedor("Pedro",2003,"Avenida Paulista");
         Produto p = new Produto(03,"xbox",4000,1000,false);
         Venda venda = new Venda();
-        venda.setVendedor(v);
-        venda.setProduto(p);
-        System.out.println("Comissão: "+calcularComissao(4000,0.15));
+        venda.setDesconto(500);
+        venda.setQuantidadedeItens(2);
+        venda.imprimir();
+
 
     }

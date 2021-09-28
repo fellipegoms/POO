@@ -1,0 +1,1 @@
+Um método private pode ser acessado somente pela classe em que se localiza, enquanto um método público pode ser acessado em qualquer outra classe.

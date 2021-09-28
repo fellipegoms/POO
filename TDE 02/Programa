@@ -1,0 +1,14 @@
+public class Programa {
+    public static void main(String[] args) {
+        Vendedor v = new Vendedor("Pedro",2003,"Avenida Paulista");
+        Produto p = new Produto(03,"xbox",100,80,false);
+        Venda venda = new Venda();
+        venda.setProduto(p);
+        venda.setVendedor(v);
+        venda.setDesconto(0);
+        venda.setQuantidadedeItens(2);
+        venda.imprimir();
+
+
+    }
+}

@@ -1,0 +1,3 @@
+Herança é criar uma superclasse e depois criar uma subclasse que vai herdar os métodos da superclasse. Encapsulamento é deixar partes do programa que não precisam
+estar interligadas o mais independente possível caso ocorra algum erro não precisar alterar o programa inteiro, por exemplo criar métodos private. Abstração é a definição de 
+classes em objetos reais, por exemplo criar uma classe Carro com o método acelerar.

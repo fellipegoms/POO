@@ -1,0 +1,8 @@
+public class Aviao {
+    public void levantaVoo(){
+
+    }
+    public void pousar(){
+
+    }
+}

@@ -1,0 +1,14 @@
+public class Venda3 {
+    public static void main(String[] args) {
+        Vendedor v3 = new Vendedor("Leonardo",2002,"Avenida Batel");
+        Produto p3 = new Produto(02,"mouse",100,80,true);
+        Venda venda3 = new Venda();
+        venda3.setProduto(p3);
+        venda3.setVendedor(v3);
+        venda3.setDesconto(30);
+        venda3.setQuantidadedeItens(2);
+        venda3.imprimir();
+
+
+    }
+}

@@ -1,0 +1,8 @@
+public class Navio {
+    public void afundar(){
+
+    }
+    public void ancorar(){
+
+    }
+}

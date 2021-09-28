@@ -4,17 +4,41 @@ public class Venda {
     private double desconto ;
     private int quantidadedeItens;
     private double valorVenda;
+    private double valor;
+    private double com;
 
 
-    static double efetuarDesconto(double valorVenda, double desconto){
-        return valorVenda - desconto;
+     void efetuarDesconto( double desconto){
+        double valorcomdesconto = getProduto().getValorVenda() - desconto;
+        if (valorcomdesconto >= getProduto().getValorCusto()){
+            valorVenda = valorcomdesconto*quantidadedeItens;
+
+        }else{
+            System.out.println("Não é possível efetuar o desconto");
+        }
+
     }
-    static double calcularValor(int quantidadedeItens, double efetuarDesconto){
-        return efetuarDesconto*quantidadedeItens;
+     void calcularValor(){
+        valor = getProduto().getValorCusto()*quantidadedeItens;
     }
-    static double calcularComissao(double calcularValor, double COMISSAO){
-        return calcularValor*COMISSAO;
+    void calcularComissao(){
+
+         com = getProduto().getValorCusto()*quantidadedeItens*0.15;
     }
+
+    public void imprimir() {
+        if (getProduto().getValorVenda() - desconto < getProduto().getValorCusto()) {
+            System.out.println("Não é possível efetuar o desconto");
+        } else {
+            vendedor.imprimirVendedor();
+            System.out.println("Comissão: " + getProduto().getValorCusto() * quantidadedeItens * 0.15);
+            System.out.println("Quantidade de itens: " + quantidadedeItens);
+            produto.imprimirProduto();
+            System.out.println("Desconto: " + desconto);
+            System.out.println("Valor total: " + (getProduto().getValorVenda() - desconto) * quantidadedeItens);
+        }
+    }
+
 
     public Produto getProduto() {
         return produto;
@@ -55,29 +79,5 @@ public class Venda {
     public void setValor(double valor) {
         this.valor = valor;
     }
-
-    private double valor;
-
-    public void imprimir(){
-        vendedor.imprimirVendedor();
-        System.out.println("Comissão: "+calcularComissao(4000,0.15));
-        System.out.println("Quantidade de itens: "+quantidadedeItens);
-        produto.imprimirProduto();
-        System.out.println("Desconto: "+desconto);
-        System.out.println("Valor total: "+calcularValor(quantidadedeItens,efetuarDesconto(valorVenda, desconto)));
-    }
-
-
-
-
-
-    public static void main(String[] args) {
-        Vendedor v = new Vendedor("Pedro",2003,"Avenida Paulista");
-        Produto p = new Produto(03,"xbox",4000,1000,false);
-        Venda venda = new Venda();
-        venda.setDesconto(0);
-        venda.setQuantidadedeItens(2);
-        venda.imprimir();
-
 
     }
